@@ -17,14 +17,20 @@ function moviesAverageOfDirector(array, director) {
   const directorMovies = array.filter(movie => movie.director === director);
   const totalScore = directorMovies.reduce((sum, movie) => sum + movie.score, 0);
   const average = totalScore / directorMovies.length || 0;
+  console.log("EXERCICI 3 ->", average)
   return Number(average.toFixed(2));
 }
 
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+  const copiedArray = [...array];
+  copiedArray.sort((a, b) => a.title.localeCompare(b.title));
+  console.log("EXERCICI 4 ->", copiedArray);
+  return copiedArray.slice(0, 20).map(movie => movie.title);
 }
+
+
 
 // Exercise 5: Order by year, ascending
 function orderByYear() {
