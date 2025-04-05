@@ -50,7 +50,7 @@ function moviesAverageByCategory() {
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
-  const copiedArray = JSON.parse(JSON.stringify(array)) // fem una còpia profunda
+  const copiedArray = JSON.parse(JSON.stringify(array))
 
   const converted = copiedArray.map(movie => {
     let totalMinutes = 0
