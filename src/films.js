@@ -1,14 +1,12 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result =  array.map(movie => movie.director);
-  console.log("EXERCICE 1 ->", result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let result = array.filter(movie => movie.director === director);
-  console.log("EXERCICI 2 ->", result);
   return result;
 }
 
@@ -17,7 +15,6 @@ function moviesAverageOfDirector(array, director) {
   const directorMovies = array.filter(movie => movie.director === director);
   const totalScore = directorMovies.reduce((sum, movie) => sum + movie.score, 0);
   const average = totalScore / directorMovies.length || 0;
-  console.log("EXERCICI 3 ->", average)
   return Number(average.toFixed(2));
 }
 
@@ -26,7 +23,6 @@ function moviesAverageOfDirector(array, director) {
 function orderAlphabetically(array) {
   const copiedArray = [...array];
   copiedArray.sort((a, b) => a.title.localeCompare(b.title));
-  console.log("EXERCICI 4 ->", copiedArray);
   return copiedArray.slice(0, 20).map(movie => movie.title);
 }
 
@@ -39,7 +35,6 @@ function orderByYear(array) {
     if (a.year !== b.year) return a.year - b.year;
     return a.title.localeCompare(b.title);
   });
-  console.log("EXERCICI 5 ->" ,copiedArray);
   return copiedArray;
 }
 
@@ -75,8 +70,6 @@ function hoursToMinutes(array) {
       duration: totalMinutes
     }
   })
-
-  console.log("EXERCICI 7 ->", converted)
   return converted
 }
 
@@ -95,8 +88,6 @@ function bestFilmOfYear(array, year) {
       best = filmsOfYear[i]
     }
   }
-
-  console.log("EXERCICI 8 ->", [best])
   return [best]
 }
 
