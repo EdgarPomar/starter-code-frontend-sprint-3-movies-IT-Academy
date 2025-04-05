@@ -293,10 +293,38 @@ describe('Function "orderByYear"', () => {
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
+  });
+
+  it('should return a number', () => {
+    expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
+  });
+
+  it('should be different from NaN', () => {
+    expect(moviesAverageByCategory(movies, 'Drama')).not.toBeNaN();
+  });
+
+  it('should return the correct average score for the given category', () => {
+    const testMovies = [
+      { title: "Movie 1", genre: ["Drama"], score: 8 },
+      { title: "Movie 2", genre: ["Drama"], score: 6 },
+      { title: "Movie 3", genre: ["Drama", "Action"], score: 10 },
+      { title: "Movie 4", genre: ["Comedy"], score: 7 },
+      { title: "Movie 5", genre: ["Drama"], score: undefined },
+    ];
+    expect(moviesAverageByCategory(testMovies, 'Drama')).toBe(8);
+  });
+
+  it('should return 0 if no movies match the category', () => {
+    const testMovies = [
+      { title: "Movie 1", genre: ["Comedy"], score: 8 },
+      { title: "Movie 2", genre: ["Action"], score: 9 }
+    ];
+    expect(moviesAverageByCategory(testMovies, 'Horror')).toBe(0);
   });
 });
+
 
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
